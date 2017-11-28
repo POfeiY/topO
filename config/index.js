@@ -31,7 +31,63 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        "/schedule/**":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        },
+        "/users/**":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        },
+        "/movies/getMovies":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        },
+        "/studio/**":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        },
+        "/movies/**": {
+          target: "http://172.20.10.9:3000",
+          secure: false,
+          changeOrigin: true
+        },
+        "/files/**": {
+          target: "http://172.20.10.9:3000",
+          secure: false,
+          changeOrigin: true
+        },
+        "/imgs/**": {
+          target: "http://172.20.10.9:3000",
+          secure: false,
+          changeOrigin: true
+        },
+         "/theaters/**":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        },
+        "/seats/**":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        },
+        "/news/**":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        },
+        "/imgFiles/**":{
+            target:"http://172.20.10.9:3000",
+            secure:false,
+            changeOrigin:true
+        }
+    },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
     // (https://github.com/webpack/css-loader#sourcemaps)

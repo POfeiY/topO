@@ -1,46 +1,51 @@
 
 <template>
 	<div class='info-wrap'>
-		<div>
+		<div class="navLeft">
 			 <el-menu
-			  style='width:240px;'
+			  style='width:260px;'
+			  background-color='#333333'
+			  text-color='#ffffff'
 			  router
 			  :default-openeds=arr
-		      default-active="2"
+		      default-active="1"
 		      class="el-menu-vertical-demo"
 		      @open="handleOpen"
 		      @close="handleClose">
 		      <el-submenu index="1">
 		        <template slot="title">
-		          <i class="el-icon-location"></i>
-		          <span>信息管理</span>
+		          <i class="el-icon-menu"></i>
+		          <span>电影信息管理</span>
 		        </template>
 		        <el-menu-item-group>
-		          <el-menu-item index="/info/counter">新增电影</el-menu-item>
-		          <el-menu-item index="/info/todoList">电影列表</el-menu-item>
-		          <el-menu-item index="/info/empList">新增影院</el-menu-item>
-		          <el-menu-item index="/info/empList_ant">影院列表</el-menu-item>
-		          <el-menu-item index="/info/addEmp">新增排片</el-menu-item>
-		          <el-menu-item index="/info/imgUpLoad">排片列表</el-menu-item>
+		          <el-menu-item index="/info/counter"><i class="el-icon-d-arrow-right"></i>新增电影</el-menu-item>
+		          <el-menu-item index="/info/todoList"><i class="el-icon-d-arrow-right"></i>电影列表</el-menu-item>
+		          <el-menu-item index="/info/addStudio"><i class="el-icon-d-arrow-right"></i>新增影院</el-menu-item>
+		          <el-menu-item index="/info/studioList"><i class="el-icon-d-arrow-right"></i>影院列表</el-menu-item>
+		          <el-menu-item index="/info/addEmp"><i class="el-icon-d-arrow-right"></i>新增排片</el-menu-item>
+		          <el-menu-item index="/info/schedule"><i class="el-icon-d-arrow-right"></i>排片列表</el-menu-item>
+		          <el-menu-item index="/"><i class="el-icon-d-arrow-right"></i>Default</el-menu-item>
+		          <el-menu-item index="/"><i class="el-icon-d-arrow-right"></i>Default</el-menu-item>
+		          <el-menu-item index="/"><i class="el-icon-d-arrow-right"></i>Default</el-menu-item>
 		        </el-menu-item-group>
 		        
 		      </el-submenu>
 		      <el-menu-item index="2">
 		        <i class="el-icon-menu"></i>
-		        <span slot="title">导航二</span>
+		        <span slot="title">Default</span>
 		      </el-menu-item>
-		     
 		    </el-menu>
-
 		</div>
-		<router-view></router-view>
-
+		<div class="emptyHolderInfo"></div>
+		<router-view class='router-wrap'>
+			
+		</router-view>
 	</div>
 </template>
 
 <script>
 
-	import router from "../../router/router"
+	import router from "../../router/router.js"
 
 	export default{
 		name:"info",
@@ -63,5 +68,17 @@
 <style>
 	.info-wrap{
 		display: flex;
+	}
+	.router-wrap{
+		margin-top:25px;
+		margin-left:20px; 
+		margin-right:20px;
+	}
+	.navLeft{
+		position:fixed;
+	}
+	.emptyHolderInfo{
+		width:260px;
+		height:100%;
 	}
 </style>
